@@ -61,7 +61,10 @@
     background:#d49644
 }
 .middlePart:focus-within{
-    border: 2px solid #febd69 ;  
+    border: 2px solid #febd69 ; 
+    transition: border 1s; 
+    transition-timing-function: ease;
+    transition-delay: 1s;
 }
 .rightSide
 {    display: flex;
