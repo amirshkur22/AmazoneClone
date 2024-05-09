@@ -5,8 +5,11 @@ import { SlLocationPin } from "react-icons/sl";
 import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
 import navStyles from "./nav.module.css";
+import LowerNav from "./LowerNav";
 const Nav = () => {
   return (
+    <>
+    
     <header>
       <nav className={navStyles.navBarWrapper}>
         <div className={navStyles.LeftSide}>
@@ -60,7 +63,9 @@ const Nav = () => {
           </div>
         </div>
       </nav>
-    </header>
+      </header>
+      <LowerNav/>
+    </>
   );
 };
 
