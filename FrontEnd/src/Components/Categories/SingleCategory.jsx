@@ -1,14 +1,15 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import singleCategoryStyles from "./category.module.css";
-const SingleCategory = ({ title, name, image }) => {
+const SingleCategory = ({ title, category, image }) => {
   return (
     <div className={singleCategoryStyles.singleCategoryContainer}>
-      <a href="/">
+      <Link to={`category/${category}`}>
         <span>
           <h2>{title}</h2>
         </span>
         <img src={image} alt=""  />
-      </a>
+      </Link>
       <p>Shop now</p>
     </div>
   );

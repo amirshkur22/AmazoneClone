@@ -31,33 +31,23 @@ export default carouselImage;
 const categoryData = [
   {
     title: "Electronics",
-    name: "electronics",
+    category: "electronics",
     image:  electro1 ,
   },
   {
     title: "Discover fashion trends",
-    name: "Women's clothing",
+    category: "women's clothing",
     image:  women2 ,
   },
   {
     title: "Men's clothing",
-    name: "men's clothing",
+    category: "men's clothing",
     image:  men3 ,
   },
   {
     title: "Jewelery",
-    name: "jewelery",
+    category: "jewelery",
     image: jew3 ,
   },
-  // {
-  //   title: "Electronics",
-  //   name: "electronics",
-  //   image: "",
-  // },
-  // {
-  //   title: "Electronics",
-  //   name: "electronics",
-  //   image: "",
-  // },
 ];
 export { categoryData };

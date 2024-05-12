@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import SingleProducts from "./SingleProducts";
-import productsStyle from './products.module.css'
+import productsStyle from "./products.module.css";
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -15,10 +15,9 @@ const Products = () => {
     };
     fetchData();
   }, []);
-
   return (
-    <div className={productsStyle.allProdutsContainer} >
-      {products.map((singleproduct, index) => (
+    <div className={productsStyle.allProdutsContainer}>
+      {products?.map((singleproduct, index) => (
         <SingleProducts key={index} {...singleproduct} />
       ))}
     </div>
