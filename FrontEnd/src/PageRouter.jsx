@@ -22,7 +22,10 @@ const PageRouter = () => {
         <Route path="/order" element={<Orders />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="category/:categoryName" element={<Results />} />
-        <Route path="category/:categoryName/products/:productId" element={<ProductDetails />} />
+        <Route
+          path="category/:categoryName/products/:productId"
+          element={<ProductDetails />}
+        />
         <Route path="/products/:productId" element={<ProductDetails />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
