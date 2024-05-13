@@ -12,18 +12,25 @@ const SingleProducts = ({
   image,
   rating,
   category,
+  flex,
+  hasDescription,
 }) => {
   return (
-    <div className={ProductStyle.productContainer}>
+    <div
+      className={`${ProductStyle.productContainer} ${
+        flex ? ProductStyle.flexedProductContainer : ""
+      }`}
+    >
       <Link to={`products/${id}`} className={ProductStyle.imageContainer}>
         {/* <h2>{category}</h2> */}
         <img src={image} alt="" />
       </Link>
-      <div>
+      <div className={`${flex ? ProductStyle.contentContainer : ""}`}>
         <h4>{title}</h4>
+        {hasDescription ? <h5>{description}</h5> : ""}
         <div className={ProductStyle.rating}>
-          {rating && <Rating value={rating.rate} precision={0.1} />}
-          <small>{rating && rating.count}</small>
+          <Rating value={rating?.rate} precision={0.1} />
+          <small>{rating?.count}</small>
         </div>
         <div className={ProductStyle.priceAndButton}>
           <CurrencyFormat amount={price} />

@@ -61,3 +61,33 @@
   align-items: center;
   gap: 5px;
 }
+
+ .flexedProductContainer{
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+  box-shadow: none;
+  gap: 30px;
+  width: 90%;
+} 
+.flexedProductContainer h3{
+  padding: 20px 0px;
+}
+.flexedProductContainer .button{
+  display: block;
+  position: static;
+  max-width: 150px;
+
+}
+.flexedProductContainer h5{
+max-width: 750px;
+}
+.flexedProductContainer img{
+  width: 300px !important;
+  height: auto;
+} 
+.contentContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
