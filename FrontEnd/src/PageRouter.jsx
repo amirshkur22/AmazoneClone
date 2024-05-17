@@ -9,7 +9,7 @@ import Orders from "./pages/Orders/Orders";
 
 import SharedComponents from "./Components/SharedComponents/SharedComponets";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
-import Results from "./pages/Results/Results";
+import CategoryDetail from "./pages/CategoriesDetails/CategoriesDetails";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 
 const PageRouter = () => {
@@ -21,7 +21,7 @@ const PageRouter = () => {
         <Route path="/pay" element={<Payment />} />
         <Route path="/order" element={<Orders />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="category/:categoryName" element={<Results />} />
+        <Route path="category/:categoryName" element={<CategoryDetail />} />
         <Route
           path="category/:categoryName/products/:productId"
           element={<ProductDetails />}

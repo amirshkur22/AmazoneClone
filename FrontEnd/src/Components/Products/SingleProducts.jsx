@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Rating } from "@mui/material";
 import CurrencyFormat from "../currencyFormat/CurrencyFormat";
 import { Link } from "react-router-dom";
 import ProductStyle from "./products.module.css";
+import { DataContext } from "../../App";
+import { Type } from "../../Utility/Action.type";
 
 const SingleProducts = ({
   id,
@@ -14,7 +16,23 @@ const SingleProducts = ({
   category,
   flex,
   hasDescription,
+  isAdded
 }) => {
+  const [state, dispatch] = useContext(DataContext);
+  const addToCart = () => {
+    dispatch({
+      type: Type.ADD_TO_CART,
+      item: {
+        id,
+        title,
+        price,
+        description,
+        image,
+        rating,
+        category,
+      },
+    });
+  };
   return (
     <div
       className={`${ProductStyle.productContainer} ${
@@ -22,7 +40,6 @@ const SingleProducts = ({
       }`}
     >
       <Link to={`products/${id}`} className={ProductStyle.imageContainer}>
-        {/* <h2>{category}</h2> */}
         <img src={image} alt="" />
       </Link>
       <div className={`${flex ? ProductStyle.contentContainer : ""}`}>
@@ -34,7 +51,9 @@ const SingleProducts = ({
         </div>
         <div className={ProductStyle.priceAndButton}>
           <CurrencyFormat amount={price} />
-          <button className={ProductStyle.button}>add to cart</button>
+         { isAdded&&<button className={ProductStyle.button} onClick={addToCart}>
+            add to cart
+          </button>}
         </div>
       </div>
     </div>

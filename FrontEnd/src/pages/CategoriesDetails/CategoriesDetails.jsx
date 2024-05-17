@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import { useParams } from "react-router-dom";
 import SingleProducts from "../../Components/Products/SingleProducts";
-import resultsStyles from "./results.module.css";
+import categoriesStyles from "./CategoriesDetails.module.css";
 import Loader from "../../Components/Loader/Loader";
 
 const Results = () => {
@@ -33,9 +33,9 @@ const Results = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className={resultsStyles.categoryContainer}>
+        <div className={categoriesStyles.categoryContainer}>
           {category?.map((singleCategory) => (
-            <SingleProducts key={singleCategory.id} {...singleCategory} />
+            <SingleProducts key={singleCategory.id} {...singleCategory} isAdded={true} />
           ))}
         </div>
       )}

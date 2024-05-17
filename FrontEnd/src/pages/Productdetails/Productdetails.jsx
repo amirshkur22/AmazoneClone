@@ -29,7 +29,7 @@ const ProductDetails = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <SingleProducts {...product} flex={true} hasDescription={true} />
+        <SingleProducts {...product} flex={true} hasDescription={true} isAdded={true}/>
       )}
     </>
   );

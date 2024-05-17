@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useReducer } from "react";
 import { Link } from "react-router-dom";
 import amazonLogo from "../../assets/images/amazonLogo.png";
 import usaFlag from "../../assets/images/usaFlag.png";
@@ -7,10 +7,11 @@ import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
 import navStyles from "./nav.module.css";
 import LowerNav from "./LowerNav";
+import { DataContext } from "../../App";
 const Nav = () => {
+const [{cart}, dispatch] = useContext(DataContext)
   return (
-    <>
-      <header>
+      <header  className={navStyles.stickyContainer}>
         <nav className={navStyles.navBarWrapper}>
           <div className={navStyles.LeftSide}>
             <Link to="/">
@@ -50,16 +51,17 @@ const Nav = () => {
             </Link>
             <div className={navStyles.lastFlex}>
               <Link to="/cart" className={navStyles.verticalFlex}>
-                <span className={navStyles.cartCount}>0</span>
+                <span className={navStyles.cartCount}>{ cart.length}</span>
+
                 <BiCart className={navStyles.BiCart} size={35} />
               </Link>
               <p className={navStyles.cart}>Cart</p>
             </div>
           </div>
         </nav>
+        <LowerNav />
       </header>
-      <LowerNav />
-    </>
+    
   );
 };
 

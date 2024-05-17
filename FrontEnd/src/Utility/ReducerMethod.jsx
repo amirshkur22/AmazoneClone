@@ -10,10 +10,8 @@ export const reducerMethod = (state, action) => {
         ...state,
         cart: [...state.cart, action.item],
       };
-    //   break;
-      default:
-          return state
-    //   break;
+
+    default:
+      return state;
   }
 };
-// const [state, dispatch] = useReducer(reducerMethod, initialState);
