@@ -1,5 +1,4 @@
 import "./App.css";
-// import PageRouter from "./PageRouter";
 import { Route, Routes } from "react-router-dom";
 import { createContext, useReducer } from "react";
 import { initialState, reducerMethod } from "./Utility/ReducerMethod";
@@ -9,7 +8,7 @@ import SignUp from "./pages/Authentication/SignUp";
 import Payment from "./pages/Payment/Payment";
 import Orders from "./pages/Orders/Orders";
 import Cart from "./pages/Cart/Cart";
-import CategoriesDetails from './pages/CategoriesDetails/CategoriesDetails'
+import CategoriesDetails from "./pages/CategoriesDetails/CategoriesDetails";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 export const DataContext = createContext();
@@ -23,7 +22,10 @@ function App() {
           <Route path="/pay" element={<Payment />} />
           <Route path="/order" element={<Orders />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="category/:categoryName" element={<CategoriesDetails />} />
+          <Route
+            path="category/:categoryName"
+            element={<CategoriesDetails />}
+          />
           <Route
             path="category/:categoryName/products/:productId"
             element={<ProductDetails />}
