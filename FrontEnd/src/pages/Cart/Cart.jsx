@@ -13,10 +13,8 @@ const Cart = () => {
   const totalPrice = cart?.reduce((accumulator, currentItem) => {
     return accumulator + currentItem.price * currentItem.quantity;
   }, 0);
-  console.log(cart)
-  // const totalPrice = cart.reduce((accumulator, currentItem) => {
-  //   return accumulator+currentItem.price;
-  // },0)
+  // console.log(cart)
+
 
   const increase = (item) => {
     dispatch({

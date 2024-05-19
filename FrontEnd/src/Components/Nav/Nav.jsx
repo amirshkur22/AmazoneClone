@@ -10,8 +10,9 @@ import LowerNav from "./LowerNav";
 import { DataContext } from "../../App";
 const Nav = () => {
   const [{ cart }, dispatch] = useContext(DataContext);
-  const totalItem=cart?.reduce( (acc,cur)=>{return acc+cur.quantity},0)
-
+  const totalItem = cart?.reduce((acc, cur) => {
+    return acc + cur.quantity;
+  }, 0);
 
   return (
     <header className={navStyles.stickyContainer}>
@@ -54,7 +55,7 @@ const Nav = () => {
           </Link>
           <div className={navStyles.lastFlex}>
             <Link to="/cart" className={navStyles.verticalFlex}>
-              <span className={navStyles.cartCount}>{ totalItem}</span>
+              <span className={navStyles.cartCount}>{totalItem}</span>
 
               <BiCart className={navStyles.BiCart} size={35} />
             </Link>
