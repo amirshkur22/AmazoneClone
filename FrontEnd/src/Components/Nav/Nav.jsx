@@ -9,59 +9,61 @@ import navStyles from "./nav.module.css";
 import LowerNav from "./LowerNav";
 import { DataContext } from "../../App";
 const Nav = () => {
-const [{cart}, dispatch] = useContext(DataContext)
-  return (
-      <header  className={navStyles.stickyContainer}>
-        <nav className={navStyles.navBarWrapper}>
-          <div className={navStyles.LeftSide}>
-            <Link to="/">
-              <img src={amazonLogo} alt="amazonLogo" width={100} />
-            </Link>
-            <div className={navStyles.SlLocationPin}>
-              <span>
-                <SlLocationPin />
-              </span>
-              <div className={navStyles.delivery}>
-                <p>Delivered to</p>
-                <span>Ethiopia</span>
-              </div>
-            </div>
-          </div>
-          <div className={navStyles.middlePart}>
-            <select name="" id="">
-              <option value="">All</option>
-            </select>
-            <input type="text" placeholder="Search Amazon" />
-            <BsSearch className={navStyles.BsSearch} size={27} />
-          </div>
-          <div className={navStyles.rightSide}>
-            <Link className={navStyles.coutrySelection} to="/">
-              <img src={usaFlag} alt="" width={20} />
-              <select name="" id="">
-                <option value="">EN</option>
-              </select>
-            </Link>
-            <Link to="/auth">
-              <p>Hello, sign in</p>
-              <span>Account & Lists</span>
-            </Link>
-            <Link to="/order">
-              <p>Returns</p>
-              <span>& Orders</span>
-            </Link>
-            <div className={navStyles.lastFlex}>
-              <Link to="/cart" className={navStyles.verticalFlex}>
-                <span className={navStyles.cartCount}>{ cart.length}</span>
+  const [{ cart }, dispatch] = useContext(DataContext);
+  const totalItem=cart?.reduce( (acc,cur)=>{return acc+cur.quantity},0)
 
-                <BiCart className={navStyles.BiCart} size={35} />
-              </Link>
-              <p className={navStyles.cart}>Cart</p>
+
+  return (
+    <header className={navStyles.stickyContainer}>
+      <nav className={navStyles.navBarWrapper}>
+        <div className={navStyles.LeftSide}>
+          <Link to="/">
+            <img src={amazonLogo} alt="amazonLogo" width={100} />
+          </Link>
+          <div className={navStyles.SlLocationPin}>
+            <span>
+              <SlLocationPin />
+            </span>
+            <div className={navStyles.delivery}>
+              <p>Delivered to</p>
+              <span>Ethiopia</span>
             </div>
           </div>
-        </nav>
-        <LowerNav />
-      </header>
-    
+        </div>
+        <div className={navStyles.middlePart}>
+          <select name="" id="">
+            <option value="">All</option>
+          </select>
+          <input type="text" placeholder="Search Amazon" />
+          <BsSearch className={navStyles.BsSearch} size={27} />
+        </div>
+        <div className={navStyles.rightSide}>
+          <Link className={navStyles.coutrySelection} to="/">
+            <img src={usaFlag} alt="" width={20} />
+            <select name="" id="">
+              <option value="">EN</option>
+            </select>
+          </Link>
+          <Link to="/auth">
+            <p>Hello, sign in</p>
+            <span>Account & Lists</span>
+          </Link>
+          <Link to="/order">
+            <p>Returns</p>
+            <span>& Orders</span>
+          </Link>
+          <div className={navStyles.lastFlex}>
+            <Link to="/cart" className={navStyles.verticalFlex}>
+              <span className={navStyles.cartCount}>{ totalItem}</span>
+
+              <BiCart className={navStyles.BiCart} size={35} />
+            </Link>
+            <p className={navStyles.cart}>Cart</p>
+          </div>
+        </div>
+      </nav>
+      <LowerNav />
+    </header>
   );
 };
 

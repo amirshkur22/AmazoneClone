@@ -5,7 +5,7 @@ import SingleProducts from "../../Components/Products/SingleProducts";
 import categoriesStyles from "./CategoriesDetails.module.css";
 import Loader from "../../Components/Loader/Loader";
 
-const Results = () => {
+const CategoriesDetails = () => {
   const { categoryName } = useParams();
   const [category, setCatgory] = useState([]);
   const [isLoading, setLoading] = useState(false);
@@ -35,7 +35,11 @@ const Results = () => {
       ) : (
         <div className={categoriesStyles.categoryContainer}>
           {category?.map((singleCategory) => (
-            <SingleProducts key={singleCategory.id} {...singleCategory} isAdded={true} />
+            <SingleProducts
+              key={singleCategory.id}
+              {...singleCategory}
+              isAdded={true}
+            />
           ))}
         </div>
       )}
@@ -43,4 +47,4 @@ const Results = () => {
   );
 };
 
-export default Results;
+export default CategoriesDetails;

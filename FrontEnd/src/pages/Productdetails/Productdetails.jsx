@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SingleProducts from "../../Components/Products/SingleProducts";
 import Loader from "../../Components/Loader/Loader";
-
 const ProductDetails = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState({});

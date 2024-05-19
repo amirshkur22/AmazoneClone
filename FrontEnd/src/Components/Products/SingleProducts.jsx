@@ -18,7 +18,8 @@ const SingleProducts = ({
   hasDescription,
   isAdded
 }) => {
-  const [state, dispatch] = useContext(DataContext);
+ 
+  const [state, dispatch] = useContext(DataContext)
   const addToCart = () => {
     dispatch({
       type: Type.ADD_TO_CART,
@@ -30,9 +31,10 @@ const SingleProducts = ({
         image,
         rating,
         category,
-      },
-    });
-  };
+      }
+      
+    })
+  }
   return (
     <div
       className={`${ProductStyle.productContainer} ${
@@ -44,15 +46,15 @@ const SingleProducts = ({
       </Link>
       <div className={`${flex ? ProductStyle.contentContainer : ""}`}>
         <h4>{title}</h4>
-        {hasDescription ? <h5>{description}</h5> : ""}
+        {hasDescription && <h5>{description}</h5>}
         <div className={ProductStyle.rating}>
           <Rating value={rating?.rate} precision={0.1} />
           <small>{rating?.count}</small>
         </div>
         <div className={ProductStyle.priceAndButton}>
           <CurrencyFormat amount={price} />
-         { isAdded&&<button className={ProductStyle.button} onClick={addToCart}>
-            add to cart
+          {isAdded && <button className={ProductStyle.button} onClick={addToCart}>
+            Add to Cart
           </button>}
         </div>
       </div>

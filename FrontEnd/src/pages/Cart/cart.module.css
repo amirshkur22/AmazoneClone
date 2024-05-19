@@ -7,6 +7,28 @@
 .cartContainer img{
     width: 100px !important;
 }
+.cartProduct{
+    display: flex;
+    gap: 10px;
+}
+.buttonConainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.buttonConainer button{
+    padding: 5px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+}
+.buttonConainer button:hover svg{
+    background-color: var(--primary-color);
+}
+.cartContainer div:not(.leftSide)
 .leftSide{
     padding: 20px;
 }
